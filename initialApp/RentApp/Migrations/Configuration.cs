@@ -72,7 +72,59 @@ namespace RentApp.Migrations
                 new AppUser() { FullName = "AppUser AppUserovic" }
 
             );
+            Branch b = new Branch();
+            Service s1 = new Service();
+            Service s2 = new Service();
+            Vehicle v1 = new Vehicle();
+            Vehicle v2 = new Vehicle();
+            Rent rnt = new Rent();
+            TypeOfVehicle typeofv = new TypeOfVehicle();
 
+            typeofv.Name = "Caravan";
+            v1.Manufactor = "Golf";
+            v1.Model = "5";
+            v1.PricePerHour = 10;
+            v1.Unavailable = false;
+            v1.Year = 2008;
+            v1.Type = typeofv;
+
+            typeofv.Vehicles = new System.Collections.Generic.List<Vehicle>();
+            typeofv.Vehicles.Add(v1);
+
+            typeofv.Name = "Cabriolet";
+            v2.Manufactor = "Peugeot";
+            v2.Model = "206";
+            v2.PricePerHour = 12;
+            v2.Unavailable = false;
+            v2.Year = 2015;
+            v2.Type = typeofv;
+
+            typeofv.Vehicles = new System.Collections.Generic.List<Vehicle>();
+            typeofv.Vehicles.Add(v2);
+
+            b.Address = "Ul.1/23";
+            b.Latitude = 2222;
+            b.Longitude = 3333;
+
+            s1.Name = "Service 1";
+            s1.Email = "servis@gmail.com";
+            s1.Description = "servis s1";
+            s1.Branches = new System.Collections.Generic.List<Branch>();
+            s1.Branches.Add(b);
+
+            s2.Name = "Service 2";
+            s2.Email = "servis2@gmail.com";
+            s2.Description = "servis s2";
+            s2.Branches = new System.Collections.Generic.List<Branch>();
+            s2.Branches.Add(b);
+
+            context.Branches.AddOrUpdate(b);
+            context.Services.AddOrUpdate(s1);
+            context.Services.AddOrUpdate(s2);
+            context.Vehicles.AddOrUpdate(v1);
+            context.Vehicles.AddOrUpdate(v2);
+            context.Types.AddOrUpdate(typeofv);
+            
             context.SaveChanges();
 
             var userStore = new UserStore<RAIdentityUser>(context);
@@ -96,6 +148,8 @@ namespace RentApp.Migrations
                 userManager.AddToRole(user.Id, "AppUser");
 
             }
+          
+           
         }
     }
 }
