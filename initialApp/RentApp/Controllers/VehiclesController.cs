@@ -18,7 +18,7 @@ namespace RentApp.Controllers
         private RADBContext db = new RADBContext();
 
         // GET: api/Vehicles
-        public IQueryable<Vehicle> GetVehicles()
+        public IEnumerable<Vehicle> GetVehicles()
         {
             return db.Vehicles;
         }

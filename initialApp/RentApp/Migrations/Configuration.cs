@@ -90,7 +90,8 @@ namespace RentApp.Migrations
 
             typeofv.Vehicles = new System.Collections.Generic.List<Vehicle>();
             typeofv.Vehicles.Add(v1);
-
+          
+           
             typeofv.Name = "Cabriolet";
             v2.Manufactor = "Peugeot";
             v2.Model = "206";
