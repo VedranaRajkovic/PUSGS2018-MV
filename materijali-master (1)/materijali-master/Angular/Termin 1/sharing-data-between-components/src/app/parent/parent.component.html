@@ -1,0 +1,10 @@
+<h2>Parent component</h2>
+
+<p> Message in parent (ViewChild): {{messageViewChild}} </p>
+
+<p> Message in parent (Output): {{messageOutput}} </p>
+
+<app-child1 (messageEvent)="receiveMessage($event)"></app-child1>
+
+<app-child [childMessage]="parentMessage"></app-child>
+
