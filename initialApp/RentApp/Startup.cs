@@ -13,6 +13,8 @@ namespace RentApp
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+
+            app.MapSignalR(); //dodali smo nakon sto smo instalirali SignalR
         }
     }
 }

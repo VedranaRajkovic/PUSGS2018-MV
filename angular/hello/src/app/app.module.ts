@@ -10,7 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { MainComponent } from './main/main.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-
+import { ClockComponent } from './clock/clock.component';
+//import { ServicesComponent } from './services/signalRservice';
 const Routes=[
   {
     path: '',
@@ -29,6 +30,11 @@ const Routes=[
     path: "register",
     component: RegisterComponent
   }
+  //{
+  //  path: "services",
+  //  component: ServicesComponent
+ // }
+  
   ]
 @NgModule({
   declarations: [
@@ -36,7 +42,10 @@ const Routes=[
     HomeComponent,
     MainComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    ClockComponent,
+   // ServicesComponent
+  
   ],
   imports: [
     BrowserModule
