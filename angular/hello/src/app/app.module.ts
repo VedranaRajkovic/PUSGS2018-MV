@@ -11,6 +11,7 @@ import { MainComponent } from './main/main.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ClockComponent } from './clock/clock.component';
+import { ContactComponent } from './contact/contact.component';
 //import { ServicesComponent } from './services/signalRservice';
 const routes: Routes=[
   {
@@ -29,6 +30,10 @@ const routes: Routes=[
   {
     path: "register",
     component: RegisterComponent
+  },
+  {
+    path: "contact",
+    component: ContactComponent
   }
   //{
   //  path: "services",
@@ -44,6 +49,7 @@ const routes: Routes=[
     RegisterComponent,
     LoginComponent,
     ClockComponent,
+    ContactComponent
    // ServicesComponent
   
   ],
