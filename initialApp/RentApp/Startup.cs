@@ -14,6 +14,8 @@ namespace RentApp
         {
             ConfigureAuth(app);
 
+            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
+
             app.MapSignalR(); //dodali smo nakon sto smo instalirali SignalR
         }
     }
